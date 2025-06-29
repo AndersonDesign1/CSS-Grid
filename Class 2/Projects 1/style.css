@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.layout {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header header"
+        "nav main ads"
+        "footer footer footer";
+    gap: 1rem;
+    margin: 0;
+}
+
+.hg-header {
+    grid-area: header;
+}
+
+.hg-nav {
+    grid-area: nav;
+}
+
+.hg-main {
+    grid-area: main;
+}
+
+.hg-ads {
+    grid-area: ads;
+}
+
+.hg-footer {
+    grid-area: footer;
+}
+
+.layout > * {
+    background-color: #e0e7ff;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.hg-header,
+.hg-footer {
+    background-color: #667eea;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "ads"
+            "footer"
+        ;
+    }
+}
